@@ -2,12 +2,14 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 
 
-const Warehouse = ({ warehouse: {name, location, products, capacity}}) => {
+const Warehouse = ({ warehouse: {name, location, product, capacity}}) => {
     return (
         <tr>
             <th>{name}</th>
             <th>{location}</th>
-            <th>{products}</th>
+            <th>
+                {`${product} `}
+            </th>
             <th>{capacity}</th>
         </tr>
     )
@@ -30,7 +32,7 @@ export const WarehouseList = () => {
                 <tr>
                     <th>Name</th>
                     <th>Location</th>
-                    <th>Products</th>
+                    <th>Product IDs</th>
                     <th>Capacity</th>
                 </tr>
             </thead>
