@@ -1,9 +1,11 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import {KWaveStash, Home, MainWarehouse, RemoteWarehouse, Products} from './pages'
+import {AppNav} from './components/Nav'
 
 export const App = () => {
   return (
       <BrowserRouter>
+          <AppNav />
           <Routes>
                <Route path="/" element={<Home />} /> {/* home page */}
                 <Route path="/og" element={<KWaveStash />} />
