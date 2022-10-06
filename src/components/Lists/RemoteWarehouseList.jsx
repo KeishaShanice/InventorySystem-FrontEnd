@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 
-const RemoteWarehouse = ({ remoteWarehouse: {name, location, products, capacity}}) => {
+const RemoteWarehouse = ({ remoteWarehouse: {name, location, product, capacity}}) => {
     return (
         <tr>
             <th>{name}</th>
             <th>{location}</th>
-            <th>{products}</th>
+            <th>{`${product} `}</th>
             <th>{capacity}</th>
         </tr>
     )
@@ -29,7 +29,8 @@ export const RemoteWarehouseList = () => {
                 <tr>
                     <th>Name</th>
                     <th>Location</th>
-                    <th>Products</th>
+                    <th>Product 1</th>
+                    <th>Product 2</th>
                     <th>Capacity</th>
                 </tr>
             </thead>

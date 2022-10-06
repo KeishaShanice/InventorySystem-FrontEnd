@@ -1,16 +1,15 @@
 import '../App.css';
 import { RemoteWarehouseList } from '../components/Lists/RemoteWarehouseList';
-import { WarehouseList } from '../components/Lists/WarehouseList';
+// import { WarehouseList } from '../components/Lists/WarehouseList';
 import { ProductList } from '../components/Lists/ProductList';
 
-function App() {
+export const KWaveStash = () => {
     return (
     <div className="App">
-        <RemoteWarehouseList />
-        <WarehouseList />
+        {/* <RemoteWarehouseList /> */}
+        {/* <WarehouseList /> */}
         <ProductList />
     </div>
     );
 }
 
-export default App;
