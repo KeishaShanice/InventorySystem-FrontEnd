@@ -29,8 +29,7 @@ export const RemoteWarehouseList = () => {
                 <tr>
                     <th>Name</th>
                     <th>Location</th>
-                    <th>Product 1</th>
-                    <th>Product 2</th>
+                    <th>Product IDs</th>
                     <th>Capacity</th>
                 </tr>
             </thead>
