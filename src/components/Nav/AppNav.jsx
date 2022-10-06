@@ -9,12 +9,15 @@ export const AppNav = () => {
                     <Link to='/' className="nav-link">Home</Link>
                 </NavItem>
                 <NavItem>
-                    <Link to="/contact" className="nav-link">Contact Us</Link>
+                    <Link to="/form" className="nav-link">Form</Link>
                 </NavItem>
             </NavSection>
             <NavSection className="reverse-nav-section">
                 <NavItem>
                     <Link to="/og" className="nav-link">Original Demo</Link>
+                </NavItem>
+                <NavItem>
+                    <Link to="/products" className="nav-link">Products</Link>
                 </NavItem>
                 <NavItem>
                     <Link to="/warehouse" className="nav-link">Warehouses</Link>
