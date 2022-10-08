@@ -3,14 +3,9 @@ import axios from "axios"
 
 
 
-export const WarehouseForm = ({setWarehouseList}) => {
+export const UpdateWarehouseForm = ({warehouseToBeEdited}) => {
 
-    const [warehouseData, setWarehouseData] = useState({
-        name : "",
-        location: "",
-        product: "",
-        capacity: 0
-    })
+    const [warehouseData, setWarehouseData] = useState(warehouseToBeEdited)
 
     const handleClear = () => {
         setWarehouseData({
@@ -24,17 +19,19 @@ export const WarehouseForm = ({setWarehouseList}) => {
     const handleSubmit = async (event) => {
         event.preventDefault()
         try {
-            const res = await axios.post('http://localhost:8080/mainwarehouse', {
+            console.log(warehouseData)
+            await axios.put(`http://localhost:8080/mainwarehouse/${warehouseData._id}`, {
                 name: warehouseData.name,
                 location: warehouseData.location,
                 product: warehouseData.product,
                 capacity: warehouseData.capacity
             })
-            setWarehouseList( warehouseList => [...warehouseList, res.data])
-            console.log("new product")
-            console.log(res.data)
-
-
+            .then(() => {
+                console.log(warehouseData)
+                alert("data updated")
+                window.location.reload()
+            })
+            .catch((err) => alert("unable to update"))
             event.target.reset()
             handleClear()
         } catch (err) {
@@ -68,15 +65,6 @@ export const WarehouseForm = ({setWarehouseList}) => {
                     value={warehouseData.product}
                     onChange={e => setWarehouseData({...warehouseData, product:e.target.value})}
                 />
-                
-                
-                    {/* <label htmlFor="type">Type:</label>
-                    <select id="type"  onChange={e => setProductData({...productData, type:e.target.value})}>
-                            {productTypes}
-                    </select>  */}
-                
-
-
             </div>
             
             <div>
