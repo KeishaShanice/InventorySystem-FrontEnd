@@ -1,23 +1,15 @@
 import { useState } from "react"
 import axios from "axios"
 
-
 const productTypes = [
     <option key="null">Please select a type</option>,
     <option key="CD">CD</option>,
     <option key="Collectable">Collectable</option>,
 ]
 
+export const UpdateProductForm = ({productToBeEdited}) => {
 
-export const ProductForm = ({setProductList}) => {
-
-    const [productData, setProductData] = useState({
-        artist: "",
-        details: "",
-        type: "",
-        price: "",
-        quantity: 0
-    })
+    const [productData, setProductData] = useState(productToBeEdited)
 
     const handleClear = () => {
         setProductData({
@@ -32,17 +24,18 @@ export const ProductForm = ({setProductList}) => {
     const handleSubmit = async (event) => {
         event.preventDefault()
         try {
-            const res = await axios.post('http://localhost:8080/products', {
+            await axios.put(`http://localhost:8080/products/${productData._id}`, {
                 artist: productData.artist,
                 details: productData.details,
                 type: productData.type,
                 price: productData.price,
                 quantity: productData.quantity
             })
-            setProductList( productList => [...productList, res.data])
-            console.log("new product")
-            console.log(res.data)
-
+            .then(() => {
+                alert("data updated")
+                window.location.reload()
+            })
+            .catch((err) => alert("unable to update"))
             event.target.reset()
             handleClear()
         } catch (err) {
@@ -57,8 +50,8 @@ export const ProductForm = ({setProductList}) => {
                     <input 
                         id="artist" 
                         value={productData.artist} 
-                        onChange={e => setProductData({...productData, artist: e.target.value})
-                        }
+                        onChange={e => setProductData({...productData, artist: e.target.value})}
+                        placeholder="ex. 2NE1" 
                     />
             </div>
             <div>
@@ -70,18 +63,14 @@ export const ProductForm = ({setProductList}) => {
                 />
             </div>
             <div>
-                {/* <label htmlFor="type">Type:</label>
-                <input type="text" 
-                    id="type"
-                    value={productData.type}
-                    onChange={e => setProductData({...productData, type:e.target.value})}
-                /> */}
-                
                 
                     <label htmlFor="type">Type:</label>
                     <select id="type"  onChange={e => setProductData({...productData, type:e.target.value})}>
                             {productTypes}
                     </select> 
+                
+
+
             </div>
             <div>
                 <label htmlFor="price">Price:</label>
@@ -100,10 +89,6 @@ export const ProductForm = ({setProductList}) => {
                 />
             </div>
 
-            <div>
-                <button type="reset" onClick={handleClear}>Clear</button>
-                <button>Submit</button>
-            </div>
         </form>
     )
 }
