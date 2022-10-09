@@ -2,6 +2,11 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import {Home, MainWarehouse, RemoteWarehouse, Products} from './pages'
 import {AppNav} from './components/Nav'
 
+/**
+ *  Renders application to browser
+ *  Routes provide path for displaying different site pages
+ */
+
 export const App = () => {
   return (
       <BrowserRouter>
