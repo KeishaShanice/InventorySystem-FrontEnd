@@ -1,4 +1,4 @@
-import { WarehouseList } from '../components/Lists/WarehouseList';
+import { WarehouseList } from '../../components/Lists/WarehouseList';
 
 export const MainWarehouse = () => {
     return (

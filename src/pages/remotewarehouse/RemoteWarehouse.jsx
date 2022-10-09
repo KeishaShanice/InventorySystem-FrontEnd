@@ -1,4 +1,4 @@
-import { RemoteWarehouseList } from '../components/Lists/RemoteWarehouseList';
+import { RemoteWarehouseList } from '../../components/Lists/RemoteWarehouseList';
 
 export const RemoteWarehouse = () => {
     return (
