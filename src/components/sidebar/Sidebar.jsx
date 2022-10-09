@@ -14,7 +14,7 @@ const Sidebar = () => {
     return (
         <div className="sidebar">
             <div className="top">
-                <span className="logo"><Link to='/' >RTW</Link></span>
+                <span className="logo"><Link to='/' style={{textDecoration: 'none', color:'teal'}}>RTW</Link></span>
             </div>
             <div className="center">
                 <ul>
@@ -36,9 +36,7 @@ const Sidebar = () => {
                     <Link to="/warehouse" style={{textDecoration: 'none'}} >
                         <li>
                             <FactoryIcon className="icon"/>
-                            
                                 <span>Main Warehouse</span>
-                            
                         </li>
                     </Link>
                     <Link to="/remote" style={{textDecoration: 'none'}} >
