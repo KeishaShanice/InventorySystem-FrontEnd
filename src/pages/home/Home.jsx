@@ -2,6 +2,8 @@ import Sidebar from "../../components/sidebar/Sidebar"
 import Navbar from "../../components/navbar/Navbar"
 import "./home.scss"
 import Widget from "../../components/widget/Widget"
+import { ProductList } from "../../components/Lists/ProductList"
+
 
 /*
  * Function that takes no parameters
@@ -16,6 +18,11 @@ export const Home = () => {
                 <Navbar />
                 <div className="widgets">
                     <Widget />
+                </div>
+                <div className="listContainer">
+                    <div className="listTitle">Latest Transactions</div>
+                    {/* <Table /> */}
+                    <ProductList />
                 </div>
             </div>
         </div>

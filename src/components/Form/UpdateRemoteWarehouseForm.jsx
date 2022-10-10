@@ -3,14 +3,9 @@ import axios from "axios"
 
 
 
-export const RemoteWarehouseForm = ({setRemoteWarehouseList}) => {
+export const UpdateRemoteWarehouseForm = ({remoteWarehouseToBeEdited}) => {
 
-    const [remoteWarehouseData, setRemoteWarehouseData] = useState({
-        name : "",
-        location: "",
-        product: "",
-        capacity: 0
-    })
+    const [remoteWarehouseData, setRemoteWarehouseData] = useState(remoteWarehouseToBeEdited)
 
     const handleClear = () => {
         setRemoteWarehouseData({
@@ -24,16 +19,16 @@ export const RemoteWarehouseForm = ({setRemoteWarehouseList}) => {
     const handleSubmit = async (event) => {
         event.preventDefault()
         try {
-            const res = await axios.post('http://localhost:8080/remotewarehouse', {
+            await axios.put(`http://localhost:8080/remotewarehouse/${remoteWarehouseData._id}`, {
                 name: remoteWarehouseData.name,
                 location: remoteWarehouseData.location,
                 product: remoteWarehouseData.product,
                 capacity: remoteWarehouseData.capacity
             })
-            setRemoteWarehouseList( remoteWarehouseList => [...remoteWarehouseList, res.data])
-            console.log(res.data)
-
-
+            .then(() => {
+                window.location.reload()
+            })
+            .catch((err) => alert("unable to update"))
             event.target.reset()
             handleClear()
         } catch (err) {
@@ -67,15 +62,6 @@ export const RemoteWarehouseForm = ({setRemoteWarehouseList}) => {
                     value={remoteWarehouseData.product}
                     onChange={e => setRemoteWarehouseData({...remoteWarehouseData, product:e.target.value})}
                 />
-                
-                
-                    {/* <label htmlFor="type">Type:</label>
-                    <select id="type"  onChange={e => setProductData({...productData, type:e.target.value})}>
-                            {productTypes}
-                    </select>  */}
-                
-
-
             </div>
             
             <div>

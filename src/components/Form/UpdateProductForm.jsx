@@ -10,6 +10,7 @@ const productTypes = [
 export const UpdateProductForm = ({productToBeEdited}) => {
 
     const [productData, setProductData] = useState(productToBeEdited)
+    const [isEditing, setIsEditing] = useState(false)
 
     const handleClear = () => {
         setProductData({
@@ -32,7 +33,7 @@ export const UpdateProductForm = ({productToBeEdited}) => {
                 quantity: productData.quantity
             })
             .then(() => {
-                alert("data updated")
+                //alert("data updated")
                 window.location.reload()
             })
             .catch((err) => alert("unable to update"))
@@ -87,6 +88,10 @@ export const UpdateProductForm = ({productToBeEdited}) => {
                     value={productData.quantity}
                     onChange={e => setProductData({...productData, quantity:e.target.value})}
                 />
+            </div>
+            <div>
+                <button type="reset" onClick={handleClear}>Clear</button>
+                <button>Submit</button>
             </div>
 
         </form>

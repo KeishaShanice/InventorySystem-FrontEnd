@@ -31,7 +31,6 @@ export const WarehouseForm = ({setWarehouseList}) => {
                 capacity: warehouseData.capacity
             })
             setWarehouseList( warehouseList => [...warehouseList, res.data])
-            console.log("new product")
             console.log(res.data)
 
 
