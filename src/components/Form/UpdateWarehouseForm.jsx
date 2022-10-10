@@ -1,5 +1,6 @@
 import { useState } from "react"
 import axios from "axios"
+import "./form.scss"
 
 /*
     * Function that takes in a warehouse and displays an edit form 
@@ -43,54 +44,56 @@ export const UpdateWarehouseForm = ({warehouseToBeEdited}) => {
 
     return(
         <section className="formContainer">
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label htmlFor="name">Name: </label>
-                        <input 
-                            id="name" 
-                            value={warehouseData.name} 
-                            onChange={e => setWarehouseData({...warehouseData, name: e.target.value})}
-                            placeholder="ex. KPC Goods" 
+            <div className="formContents">
+                <form onSubmit={handleSubmit}>
+                    <div className="formInput">
+                        <label htmlFor="name">Name: </label>
+                            <input 
+                                id="name" 
+                                value={warehouseData.name} 
+                                onChange={e => setWarehouseData({...warehouseData, name: e.target.value})}
+                                placeholder="ex. KPC Goods" 
+                                required
+                            />
+                    </div>
+
+                    <div className="formInput">
+                        <label htmlFor="location">Location:</label>
+                        <input type="text" 
+                            id="location"
+                            value={warehouseData.location}
+                            onChange={e => setWarehouseData({...warehouseData, location:e.target.value})}
                             required
                         />
-                </div>
+                    </div>
 
-                <div>
-                    <label htmlFor="location">Location:</label>
-                    <input type="text" 
-                        id="location"
-                        value={warehouseData.location}
-                        onChange={e => setWarehouseData({...warehouseData, location:e.target.value})}
-                        required
-                    />
-                </div>
+                    <div className="formInput">
+                        <label htmlFor="product">Product:</label>
+                        <input type="text" 
+                            id="product"
+                            value={warehouseData.product}
+                            onChange={e => setWarehouseData({...warehouseData, product:e.target.value})}
+                            required
+                        />
+                    </div>
+                    
+                    <div className="formInput">
+                        <label htmlFor="capacity">Capacity:</label>
+                        <input type="number" 
+                            id="capacity"
+                            value={warehouseData.capacity}
+                            onChange={e => setWarehouseData({...warehouseData, capacity:e.target.value})}
+                            min="1" max="100"
+                            required
+                        />
+                    </div>
 
-                <div>
-                    <label htmlFor="product">Product:</label>
-                    <input type="text" 
-                        id="product"
-                        value={warehouseData.product}
-                        onChange={e => setWarehouseData({...warehouseData, product:e.target.value})}
-                        required
-                    />
-                </div>
-                
-                <div>
-                    <label htmlFor="capacity">Capacity:</label>
-                    <input type="number" 
-                        id="capacity"
-                        value={warehouseData.capacity}
-                        onChange={e => setWarehouseData({...warehouseData, capacity:e.target.value})}
-                        min="1" max="100"
-                        required
-                    />
-                </div>
-
-                <div>
-                    <button type="reset" onClick={handleClear}>Clear</button>
-                    <button>Submit</button>
-                </div>
-            </form>
+                    <div className="buttonContainer">
+                        <button type="reset" onClick={handleClear}>Clear</button>
+                        <button>Submit</button>
+                    </div>
+                </form>
+            </div>
         </section>
     )
 }

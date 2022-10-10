@@ -1,6 +1,6 @@
 import { useState } from "react"
 import axios from "axios"
-import "./form.scss";
+import "./form.scss"
 
 const productTypes = [
     <option key="null">Please select a type</option>,
@@ -118,7 +118,7 @@ export const ProductForm = ({setProductList}) => {
                         />
                     </div>
 
-                    <div>
+                    <div className="buttonContainer">
                         <button type="reset" onClick={handleClear}>Clear</button>
                         <button>Submit</button>
                     </div>
