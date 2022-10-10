@@ -11,7 +11,6 @@ import TableHead from '@mui/material/TableHead'
 import TableRow from '@mui/material/TableRow'
 import Paper from '@mui/material/Paper'
 import Button from '@mui/material/Button'
-import "../table/table.scss"
 
 
 /*
@@ -92,6 +91,7 @@ export const RemoteWarehouseList = () => {
                             <TableCell className="tableCell"  align="center">Location</TableCell>
                             <TableCell className="tableCell"  align="center">Product IDs</TableCell>
                             <TableCell className="tableCell"  align="center">Capacity</TableCell>
+                            <TableCell className="tableCell"  align="center">Actions</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
