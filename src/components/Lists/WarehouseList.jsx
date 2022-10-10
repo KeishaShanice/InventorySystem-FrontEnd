@@ -4,7 +4,6 @@ import { WarehouseForm } from '../Form'
 import { UpdateWarehouseForm} from '../Form'
 import * as React from 'react';
 import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
@@ -36,7 +35,7 @@ export const WarehouseList = () => {
                 <TableCell align="center">{name}</TableCell>
                 <TableCell align="center">{location}</TableCell>
                 <TableCell align="center">
-                    {`${product}`}
+                        {`${product }`}
                 </TableCell>
                 <TableCell align="center">{capacity}</TableCell>
                 <TableCell align="center">

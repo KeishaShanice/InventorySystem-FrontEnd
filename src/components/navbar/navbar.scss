@@ -1,6 +1,6 @@
 .navbar {
     height: 50px;
-    border-bottom: 0.5px solid rgb(231, 228, 228);
+    border-bottom: 0.5px solid rgb(191, 189, 189);
     display: flex;
     align-items: center;
     font-size: 14px;
@@ -30,6 +30,13 @@
             }
         }
 
+        .header {
+            font-size: 24px;
+            font-style: italic;
+            color: teal;
+            margin-right: 25px;
+        }
+
 
         .items {
             display: flex;
@@ -42,6 +49,7 @@
 
                 .icon {
                     font-size: 20px;
+                    color: teal;
                 }
             }
         }
