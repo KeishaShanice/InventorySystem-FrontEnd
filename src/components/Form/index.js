@@ -1,5 +1,6 @@
 export * from './WarehouseForm'
 export * from './ProductForm'
 export * from './RemoteWarehouseForm'
+export * from './UpdateRemoteWarehouseForm'
 export * from './UpdateWarehouseForm'
 export * from './UpdateProductForm'

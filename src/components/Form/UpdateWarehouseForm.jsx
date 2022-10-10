@@ -28,7 +28,6 @@ export const UpdateWarehouseForm = ({warehouseToBeEdited}) => {
             })
             .then(() => {
                 console.log(warehouseData)
-                alert("data updated")
                 window.location.reload()
             })
             .catch((err) => alert("unable to update"))
