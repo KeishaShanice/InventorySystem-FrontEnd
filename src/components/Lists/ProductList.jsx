@@ -11,6 +11,7 @@ import TableHead from '@mui/material/TableHead'
 import TableRow from '@mui/material/TableRow'
 import Paper from '@mui/material/Paper'
 import Button from '@mui/material/Button'
+import FactoryIcon from '@mui/icons-material/Factory'
 
 
 /*
@@ -42,7 +43,7 @@ export const ProductList = () => {
                 <TableCell align="center">
                         <Button variant="outlined" size="small" onClick={() => editProduct(_id)}>Edit</Button>
                         <Button variant="outlined" size="small" onClick={() => deleteProduct(_id)}>Delete</Button>
-                        <Button variant="outlined" size="small" onClick={() => addToWarehouse(_id)}>Add</Button>
+                        <Button variant="outlined" size="small" onClick={() => addToWarehouse(_id)}>Add <FactoryIcon className="icon"/>  </Button>
                 </TableCell>
             </TableRow>
         )
