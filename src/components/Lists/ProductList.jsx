@@ -104,8 +104,8 @@ export const ProductList = () => {
                     <Table sx={{ minWidth: 650 }} aria-label="simple table">
                         <TableHead>
                             <TableRow>
-                                <TableCell className="tableCell"  align="center">Details</TableCell>
-                                <TableCell className="tableCell"  align="center" >Artist</TableCell>
+                                <TableCell className="tableCell"  align="center">Artist</TableCell>
+                                <TableCell className="tableCell"  align="center" >Details</TableCell>
                                 <TableCell className="tableCell"  align="center">Type</TableCell>
                                 <TableCell className="tableCell"  align="center">Price</TableCell>
                                 <TableCell className="tableCell"  align="center">Quantity</TableCell>
