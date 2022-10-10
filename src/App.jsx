@@ -3,8 +3,6 @@ import {Home, MainWarehouse, RemoteWarehouse, Products} from './pages'
 import Sidebar from "./components/sidebar/Sidebar"
 import Navbar from "./components/navbar/Navbar"
 
-import {AppNav} from './components/Nav'
-
 /**
  *  Renders application to browser
  *  Routes provide path for displaying different page site
@@ -13,7 +11,7 @@ import {AppNav} from './components/Nav'
 export const App = () => {
   return (
       <BrowserRouter>
-      <div className="home">
+        <div className="home">
             <Sidebar />
             <div className="homecontainer">
                 <Navbar />
@@ -24,7 +22,7 @@ export const App = () => {
                   <Route path="/products" element={<Products />} /> 
             </Routes>
             </div>
-            </div>
+          </div>
       </BrowserRouter>
   )
 }
