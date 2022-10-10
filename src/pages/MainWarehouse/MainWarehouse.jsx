@@ -1,4 +1,5 @@
 import { WarehouseList } from '../../components/Lists/WarehouseList';
+import './mainwarehouse.scss'
 
 export const MainWarehouse = () => {
     return (
@@ -6,6 +7,5 @@ export const MainWarehouse = () => {
             <h1>Main Warehouses</h1>
             <WarehouseList />
         </div>
-        
     )
 }

@@ -73,16 +73,18 @@ export const RemoteWarehouseForm = ({setRemoteWarehouseList}) => {
                             id="location"
                             value={remoteWarehouseData.location}
                             onChange={e => setRemoteWarehouseData({...remoteWarehouseData, location:e.target.value})}
+                            placeholder="ex. Chicago, IL"
                             required
                         />
                     </div>
 
                     <div className="formInput">
-                        <label htmlFor="product">Product:</label>
+                        <label htmlFor="product">Product ID:</label>
                         <input type="text" 
                             id="product"
                             value={remoteWarehouseData.product}
                             onChange={e => setRemoteWarehouseData({...remoteWarehouseData, product:e.target.value})}
+                            placeholder="ex. 797876576546469"
                             required
                         />
                     </div>
@@ -93,6 +95,7 @@ export const RemoteWarehouseForm = ({setRemoteWarehouseList}) => {
                             id="capacity"
                             value={remoteWarehouseData.capacity}
                             onChange={e => setRemoteWarehouseData({...remoteWarehouseData, capacity:e.target.value})}
+                            placeholder="ex. 50"
                             min="20" max="50"
                             required
                         />

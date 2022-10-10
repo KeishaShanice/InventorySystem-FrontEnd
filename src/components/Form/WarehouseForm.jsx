@@ -74,17 +74,18 @@ export const WarehouseForm = ({setWarehouseList}) => {
                             id="location"
                             value={warehouseData.location}
                             onChange={e => setWarehouseData({...warehouseData, location:e.target.value})}
+                            placeholder="ex. Chicago, IL"
                             required
                         />
                     </div>
                     
                     <div className="formInput">
-                        <label htmlFor="product">Product:</label>
+                        <label htmlFor="product">Product ID:</label>
                         <input type="text" 
                             id="product"
                             value={warehouseData.product}
                             onChange={e => setWarehouseData({...warehouseData, product:e.target.value})}
-                            required
+                            placeholder="ex. 68978798799879798"
                         />
                     </div>
                     
@@ -95,6 +96,7 @@ export const WarehouseForm = ({setWarehouseList}) => {
                             value={warehouseData.capacity}
                             onChange={e => setWarehouseData({...warehouseData, capacity:e.target.value})}
                             min="1" max="100"
+                            placeholder="ex. 100"
                             required
                         />
                     </div>

@@ -13,12 +13,15 @@ const Navbar = () => {
     return (
         <nav className = "navbar" >
             <div className="wrapper">
-            <div className="search">
-                <input type="text" placeholder= "Search..." />
-                <SearchTwoToneIcon />
-            </div>
+                <div className="search">
+                    <input type="text" placeholder= "Search..." />
+                    <SearchTwoToneIcon />
+                </div>
+                <div className="header">
+                    <h1>Ride The Wave</h1>
+                </div>
                 <div className="items">
-                <div className="item">
+                    <div className="item">
                         <LanguageOutlinedIcon className="icon"/>
                         <span>English</span>
                     </div>
